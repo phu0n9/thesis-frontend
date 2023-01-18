@@ -65,3 +65,17 @@ body {
   justify-content: space-evenly;
   align-items: flex-end;
 }
+
+.react-pdf__Page.pdf-page {
+  display: inline-block;
+}
+
+.custom-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.highlight-text {
+  color: blue;
+}
