@@ -51,6 +51,5 @@
     "babel-eslint": "^10.1.0"
   },
   "main": "index.js",
-  "author": "Phuong Nguyen <pnha1303@gmail.com>",
   "license": "MIT"
 }
