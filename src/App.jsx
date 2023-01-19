@@ -104,7 +104,6 @@ export default function App() {
 
   const getChildWords = useCallback(
     (id) => {
-      // console.log(results[id]);
       return results[id];
     },
     [results]
@@ -145,7 +144,7 @@ export default function App() {
     }
   }, [current, handleSearchByHighLight]);
 
-  console.log(prev);
+  console.log(results);
 
   return (
     <Context.Provider

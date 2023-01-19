@@ -7,22 +7,22 @@ type ItemProps = {
   id: number;
   parentID: number;
   isClickable: boolean;
+  isExpanding: boolean;
 };
 
 export default function Rows() {
   const { rootKeywords, keyword } = useKeywords();
-  console.log(rootKeywords);
   return (
     <div>
       {rootKeywords != null && rootKeywords.length > 0 && (
         <KeywordList keywords={rootKeywords} />
       )}
-      {typeof keyword === "string" && <NotFound />}
+      {typeof keyword === "string" && <NotFound keyword={keyword}/>}
     </div>
   );
 }
 
-const NotFound = () => {
+const NotFound = ({keyword}: any) => {
   return (
     <div
       style={{
@@ -50,10 +50,11 @@ const NotFound = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          color: '#605c5c'
+          color: '#605c5c',
+          margin: '0 auto'
         }}
       >
-        No ontology tree exists for such terms
+        {keyword}
       </h3>
     </div>
   );
@@ -92,7 +93,7 @@ const Keyword = (keyword: ItemProps) => {
           onMouseLeave={() => setIsShown(false)}
           className={isShown ? "highlight-text" : ""}
         >
-          {keyword.text}
+          {keyword.isExpanding ? keyword.text+'...': keyword.text}
         </p>
       ) : (
         <p>{keyword.text}</p>
